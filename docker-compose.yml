@@ -2,16 +2,16 @@ kingphisher:
   build: .
   hostname: kingphisher
   links:
-  - kingdata
+  - postgres
   ports: 
   - "80:80"
   - "22:22"
-kingdata:
+postgres:
   image: dshimola/kingpsql
   hostname: postgres
   volumes_from:
-  - kingdatavolume
-kingdatavolume:
+  - postgresdata
+postgresdata:
   image: dshimola/kingpsql
   entrypoint: /bin/true
   
